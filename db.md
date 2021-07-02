@@ -1,7 +1,7 @@
 # universityDb
 
 ## department
-- id                PK BIGINT AUTO_INCREMENT UNIQUE 
+- id                PK INT AUTO_INCREMENT UNIQUE 
 - name              VARCHAR(50) INDEX NOTNULL
 - director          VARCHAR(20) NULL
 - desc              TEXT NOTNULL
@@ -9,7 +9,7 @@
 
 ## faculty_of
 
-- id                PK BIGINT AUTO_INCREMENT UNIQUE 
+- id                PK INT AUTO_INCREMENT UNIQUE 
 - id_department     FK BIGINT  
 - name              VARCHAR(50) INDEX NOTNULL
 - headmaster        VARCHAR(20) NULL
@@ -18,7 +18,7 @@
 
 ## course
 
-- id                PK BIGINT AUTO_INCREMENT UNIQUE 
+- id                PK INT AUTO_INCREMENT UNIQUE 
 - name              VARCHAR(30) NOTNULL
 - teacher           VARCHAR(20) NULL
 - desc              TEXT NOTNULL
