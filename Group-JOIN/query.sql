@@ -51,3 +51,26 @@
     ON degrees.department_id= departments.id 
     ORDER BY `Cognome studente` ASC;
 
+-- Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+5) SELECT degrees.name AS "Facoltà" , courses.name AS "Corsi" , teachers.name AS "Docenti"
+    FROM courses
+    JOIN degrees 
+    ON courses.degree_id=degrees.id
+    JOIN course_teacher
+    ON courses.id=course_teacher.course_id
+    JOIN teachers
+    ON course_teacher.teacher_id= teachers.id
+    ORDER BY `Facoltà` ASC;
+
+-- Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (5)
+6) SELECT teachers.surname AS "Docente", courses.name AS "Corso", departments.name AS "Dipartimento"
+    FROM teachers
+    JOIN course_teacher
+    ON teachers.id=course_teacher.teacher_id
+    JOIN courses
+    ON course_teacher.course_id=courses.id
+    JOIN degrees
+    ON courses.degree_id=degrees.id
+    JOIN departments
+    ON degrees.department_id=departments.id
+    WHERE departments.id=5;
