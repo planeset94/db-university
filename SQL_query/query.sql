@@ -4,5 +4,10 @@
 4) SELECT * FROM `courses` WHERE `year`=1 AND `period`= 'I semestre';
 5) SELECT * FROM `exams` WHERE `date`='2020-06-20' AND `hour`>'14:00:00';
 6) SELECT * FROM `degrees` WHERE `level`='magistrale';
-7) SELECT COUNT(`id`) FROM `departments`;
-8) SELECT * FROM `teachers` WHERE `phone`IS NULL;
+-- Oppure 
+6) SELECT * FROM `degrees` WHERE `name` LIKE '%magistrale%';
+
+7) SELECT COUNT(`id`) AS `Dipeartimenti`  FROM `departments`;
+8) SELECT * FROM `teachers` WHERE `phone`IS NULL; 
+-- Oppure 
+8) SELECT COUNT(*) AS `insegnanti senza numero` FROM `teachers` WHERE `phone`IS NULL;
