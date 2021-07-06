@@ -34,12 +34,13 @@ $results = $connection->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>mysqli</title>
 </head>
 
 <body>
 
-<?php
+    <?php
 // Verifichiamo se la query è corretta e se ci sono risultati --> se è tutto vero, mostro a schermo le info
 
 if ($results && $results->num_rows > 0) {
@@ -48,17 +49,18 @@ if ($results && $results->num_rows > 0) {
     // Raggiunto l’ultimo record fetch_assoc() restituisce il valore FALSE, segnalando quindi che non ci sono più dati da prelevare.
     $project = $results->fetch_assoc();
  ?>
-
-<h2> Nomi:</h2>
-
-    <?php foreach ($results as $item) { ?>
-    
+    <br>
+    <br>
+    <h2> Nomi:</h2>
+    <br>
+    <div class="contenitore">
+        <?php foreach ($results as $item) : ?>
         <p class="name"><?= $item['name'];?> </p>
+        <?php endforeach ?>
+    </div>
 
 
-<?php
-
-    }
+    <?php  
 }
 
     //Chiudo la connessione al server

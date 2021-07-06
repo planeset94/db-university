@@ -57,7 +57,7 @@ $results = $connection->query($sql);
     </form>
 
 
-    <h1><?=$name . ": " .$message; ?></h1>
+    <h1><?=$name . "--> " .$message; ?></h1>
 
     <p class="name"><?= $item['name'];?> </p>
 
