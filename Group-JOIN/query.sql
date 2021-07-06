@@ -78,3 +78,12 @@
 -- BONUS
 -- Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
 
+SELECT COUNT(courses.name) AS 'tentativi', students.name AS 'student_name', students.surname AS 'student_surname' , courses.name AS 'course_name' 
+FROM exam_student 
+JOIN exams 
+ON exam_student.exam_id = exams.id 
+JOIN students 
+ON exam_student.student_id = students.id 
+JOIN courses 
+ON exams.course_id = courses.id 
+GROUP BY students.id, courses.name
