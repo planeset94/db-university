@@ -49,7 +49,7 @@
     ON students.degree_id=degrees.id 
     JOIN departments 
     ON degrees.department_id= departments.id 
-    ORDER BY `Cognome studente` ASC;
+    ORDER BY `Nome studente`,`Cognome studente` ASC;
 
 -- Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 5) SELECT degrees.name AS "Facoltà" , courses.name AS "Corsi" , teachers.name AS "Docenti"
@@ -74,3 +74,7 @@
     JOIN departments
     ON degrees.department_id=departments.id
     WHERE departments.id=5;
+
+-- BONUS
+-- Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
+
