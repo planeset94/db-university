@@ -20,10 +20,18 @@ if($connection && $connection->connect_error){
 
 
 
-$statement = $connection->prepare("INSERT INTO `students` (`name`,`surname`) VALUES (?, ?)");
-$statement->bind_param( "iss", "iss", $name, $surname);
+$statement = $connection->prepare("INSERT INTO `students` (`name`,`surname`,`date_of_birth`, `fiscal_code`,`enrolment_date`, `registration_number`, `email`) VALUES (?, ?,?,?,?,?,?)");
+$statement->bind_param( "iss", "iss", $name, $surname,$date_of_birth,$fiscal_code,$enrolment_date, $registration_number, $email);
 $name= '?';
 $lastname='?';
+$date_of_birth='?';
+$fiscal_code='?';
+$enrolment_date='?';
+$registration_number='?';
+$email='?';
+
+
+
 $query= $statement->execute();
 var_dump($query);
 
